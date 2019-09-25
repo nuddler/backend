@@ -3,6 +3,7 @@ package com.bdlugosz.fleeter.bff.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.BeanUtils;
 
 import java.util.Date;
 
@@ -41,4 +42,7 @@ public class CarBasicInfo {
 
     private Date endOfTechnicalInspection;
 
+    public CarBasicInfo(Car e) {
+        BeanUtils.copyProperties(e, this);
+    }
 }

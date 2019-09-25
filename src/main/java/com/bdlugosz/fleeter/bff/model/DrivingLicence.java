@@ -6,24 +6,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class DrivingLicence {
 
     @Id
     public String id;
 
-    String firstName;
-    String lastName;
-
-    Address userAddress;
-    Address contactAddress;
-    String phoneNumber;
-    String email;
-
-    BillingData billingData;
-    DrivingLicence licence;
-
+    List<String> categoryList;
+    String licenceNumber;
+    LocalDate expirationDate;
 }

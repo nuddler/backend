@@ -4,16 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class User {
-
-    @Id
-    public String id;
+public class PersonalDataSection {
 
     String firstName;
     String lastName;
@@ -25,5 +21,4 @@ public class User {
 
     BillingData billingData;
     DrivingLicence licence;
-
 }

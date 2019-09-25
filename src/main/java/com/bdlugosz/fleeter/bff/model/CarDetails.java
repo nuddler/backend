@@ -1,10 +1,11 @@
 package com.bdlugosz.fleeter.bff.model;
 
+import com.bdlugosz.fleeter.bff.model.Car;
+import com.bdlugosz.fleeter.bff.model.Feature;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -14,14 +15,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Car {
+public class CarDetails {
 
-    @Id
     public String id;
-
-    private boolean taken;
-
-    private String takenBy;
 
     private boolean working;
 
@@ -52,4 +48,23 @@ public class Car {
     private LocalDate endOfTechnicalInspection;
 
     private List<Feature> features;
+
+    public CarDetails(Car car) {
+        id = car.getId();
+        working = car.isWorking();
+        description = car.getDescription();
+        name = car.getName();
+        iconUrl = car.getIconUrl();
+        iconTitle = car.getIconTitle();
+        totalMileage = car.getTotalMileage();
+        colour = car.getColour();
+        brand = car.getBrand();
+        model = car.getModel();
+        prettyName = car.getPrettyName();
+        engine = car.getEngine();
+        fuelType = car.getFuelType();
+        endOfInsurance = car.getEndOfInsurance();
+        endOfTechnicalInspection = car.getEndOfTechnicalInspection();
+        features = car.getFeatures();
+    }
 }

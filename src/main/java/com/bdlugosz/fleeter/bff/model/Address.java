@@ -10,20 +10,12 @@ import org.springframework.data.annotation.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Address {
 
     @Id
     public String id;
 
-    String firstName;
-    String lastName;
-
-    Address userAddress;
-    Address contactAddress;
-    String phoneNumber;
-    String email;
-
-    BillingData billingData;
-    DrivingLicence licence;
-
+    String name;
+    String street;
+    String city;
 }
